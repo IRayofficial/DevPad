@@ -1,0 +1,84 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Olive\\source\\repos\\DevPad\\DevPad\\DevPad.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Olive\\source\\repos\\DevPad\\DevPad\\DevPad.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Olive\\source\\repos\\DevPad\\DevPad\\DevPad.csproj",
+        "projectName": "DevPad",
+        "projectPath": "C:\\Users\\Olive\\source\\repos\\DevPad\\DevPad\\DevPad.csproj",
+        "packagesPath": "C:\\Users\\Olive\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Olive\\source\\repos\\DevPad\\DevPad\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Olive\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0-windows7.0": {
+            "targetAlias": "net7.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0-windows7.0": {
+          "targetAlias": "net7.0-windows",
+          "dependencies": {
+            "AvalonEdit": {
+              "target": "Package",
+              "version": "[6.3.0.90, )"
+            },
+            "FCTB": {
+              "target": "Package",
+              "version": "[2.16.24, )"
+            },
+            "MahApps.Metro": {
+              "target": "Package",
+              "version": "[3.0.0-alpha0492, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

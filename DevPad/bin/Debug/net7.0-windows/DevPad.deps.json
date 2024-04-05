@@ -1,0 +1,157 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "DevPad/1.0.0": {
+        "dependencies": {
+          "AvalonEdit": "6.3.0.90",
+          "FCTB": "2.16.24",
+          "MahApps.Metro": "3.0.0-alpha0492"
+        },
+        "runtime": {
+          "DevPad.dll": {}
+        }
+      },
+      "AvalonEdit/6.3.0.90": {
+        "runtime": {
+          "lib/net7.0-windows7.0/ICSharpCode.AvalonEdit.dll": {
+            "assemblyVersion": "6.3.0.90",
+            "fileVersion": "6.3.0.90"
+          }
+        }
+      },
+      "ControlzEx/7.0.0-alpha0021": {
+        "dependencies": {
+          "Microsoft.Xaml.Behaviors.Wpf": "1.1.77",
+          "System.Text.Json": "8.0.0"
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/ControlzEx.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.0.21"
+          }
+        }
+      },
+      "FCTB/2.16.24": {
+        "runtime": {
+          "lib/FastColoredTextBox.dll": {
+            "assemblyVersion": "2.16.24.0",
+            "fileVersion": "2.16.24.0"
+          }
+        }
+      },
+      "MahApps.Metro/3.0.0-alpha0492": {
+        "dependencies": {
+          "ControlzEx": "7.0.0-alpha0021",
+          "Microsoft.Xaml.Behaviors.Wpf": "1.1.77"
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/MahApps.Metro.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.492"
+          }
+        },
+        "resources": {
+          "lib/net6.0-windows7.0/de/MahApps.Metro.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "Microsoft.Xaml.Behaviors.Wpf/1.1.77": {
+        "runtime": {
+          "lib/net6.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.77.27830"
+          }
+        }
+      },
+      "System.Text.Encodings.Web/8.0.0": {
+        "runtime": {
+          "lib/net7.0/System.Text.Encodings.Web.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/browser/lib/net7.0/System.Text.Encodings.Web.dll": {
+            "rid": "browser",
+            "assetType": "runtime",
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        }
+      },
+      "System.Text.Json/8.0.0": {
+        "dependencies": {
+          "System.Text.Encodings.Web": "8.0.0"
+        },
+        "runtime": {
+          "lib/net7.0/System.Text.Json.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DevPad/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AvalonEdit/6.3.0.90": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WVTb5MxwGqKdeasd3nG5udlV4t6OpvkFanziwI133K0/QJ5FvZmfzRQgpAjGTJhQfIA8GP7AzKQ3sTY9JOFk8Q==",
+      "path": "avalonedit/6.3.0.90",
+      "hashPath": "avalonedit.6.3.0.90.nupkg.sha512"
+    },
+    "ControlzEx/7.0.0-alpha0021": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NCL5Fw5N6tdtfBhxKC7klG0O1Oakq0zCvavXuyL5wijEDM/uT5VznP9YHhit2T1Uw+xpecJornhd3dXV4e2AWw==",
+      "path": "controlzex/7.0.0-alpha0021",
+      "hashPath": "controlzex.7.0.0-alpha0021.nupkg.sha512"
+    },
+    "FCTB/2.16.24": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7E+vfTh4kV4Cz9hkHehgbmJQh03EdaMWyjY3T9YA4snqI7Bi11zlAvJgyO5HNdkL+Znzas8yyYE9vuF+izxWQw==",
+      "path": "fctb/2.16.24",
+      "hashPath": "fctb.2.16.24.nupkg.sha512"
+    },
+    "MahApps.Metro/3.0.0-alpha0492": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ymSBkgMmaWAxpMJ1I0EiO2QCrOlO3tRbSeFp9InlopbklBxwzl9wirUBxxZXIccN7IF0JL6woS0WbHy/nb/DUg==",
+      "path": "mahapps.metro/3.0.0-alpha0492",
+      "hashPath": "mahapps.metro.3.0.0-alpha0492.nupkg.sha512"
+    },
+    "Microsoft.Xaml.Behaviors.Wpf/1.1.77": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MCu674ZETgU18EbxfwIlRpUPJ02YbZenLsMCXTkpeA7KUBpXfFaOUDlEO+7UWu5AFnUoydg+aQENJkuaZPheMQ==",
+      "path": "microsoft.xaml.behaviors.wpf/1.1.77",
+      "hashPath": "microsoft.xaml.behaviors.wpf.1.1.77.nupkg.sha512"
+    },
+    "System.Text.Encodings.Web/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yev/k9GHAEGx2Rg3/tU6MQh4HGBXJs70y7j1LaM1i/ER9po+6nnQ6RRqTJn1E7Xu0fbIFK80Nh5EoODxrbxwBQ==",
+      "path": "system.text.encodings.web/8.0.0",
+      "hashPath": "system.text.encodings.web.8.0.0.nupkg.sha512"
+    },
+    "System.Text.Json/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OdrZO2WjkiEG6ajEFRABTRCi/wuXQPxeV6g8xvUJqdxMvvuCCEk86zPla8UiIQJz3durtUEbNyY/3lIhS0yZvQ==",
+      "path": "system.text.json/8.0.0",
+      "hashPath": "system.text.json.8.0.0.nupkg.sha512"
+    }
+  }
+}

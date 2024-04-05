@@ -1,0 +1,54 @@
+﻿<Window x:Class="DevPad.Popup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DevPad"
+        mc:Ignorable="d"
+        Title="Neu erstellen" Height="250" MaxHeight="250" MaxWidth="300" Width="300">
+    <Grid Background="LightGray">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Breite:" Grid.Row="0"/>
+        <TextBox x:Name="WidthTextBox" Text="1920" Grid.Row="0" Margin="60,0,0,0"/>
+
+        <Label Content="Höhe:" Grid.Row="1" Margin="0,10,0,0"/>
+        <TextBox x:Name="HeightTextBox" Text="1080" Grid.Row="1" Margin="60,10,0,0"/>
+        
+        <Grid x:Name="colorGrid" Grid.Row="2" HorizontalAlignment="Center" Margin="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Buttons für die Brush-Auswahl -->
+            <Button Grid.Row="0" Grid.Column="0" x:Name="B1" Click="BrushButton_Click" Width="40" Height="40"/>
+            <Button Grid.Row="0" Grid.Column="1" x:Name="B2" Click="BrushButton_Click" Width="40" Height="40"/>
+            <Button Grid.Row="0" Grid.Column="2" x:Name="B3" Click="BrushButton_Click" Width="40" Height="40"/>
+            <Button Grid.Row="0" Grid.Column="3" x:Name="B4" Click="BrushButton_Click" Width="40" Height="40"/>
+            <Button Grid.Row="0" Grid.Column="4" x:Name="B5" Click="BrushButton_Click" Width="40" Height="40"/>
+
+            <Button Grid.Row="1" Grid.Column="0" x:Name="B6"  Click="BrushButton_Click" Width="40" Height="40"/>
+            <Button Grid.Row="1" Grid.Column="1" x:Name="B7"  Click="BrushButton_Click" Width="40" Height="40"/>
+            <Button Grid.Row="1" Grid.Column="2" x:Name="B8" Click="BrushButton_Click" Width="40" Height="40"/>
+            <Button Grid.Row="1" Grid.Column="3" x:Name="B9" Click="BrushButton_Click" Width="40" Height="40"/>
+            <Button Grid.Row="1" Grid.Column="4" x:Name="B10"  Click="BrushButton_Click" Width="40" Height="40"/>
+
+        </Grid>
+
+        <Button Content="Neu erstellen" Grid.Row="3" Margin="0,20,0,0" Click="CreateButton_Click"/>
+
+    </Grid>
+</Window>

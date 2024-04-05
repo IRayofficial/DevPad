@@ -1,0 +1,322 @@
+﻿<Window x:Class="DevPad.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DevPad"
+        mc:Ignorable="d"
+        Title="DevPad" Height="1080px" Width="1920px">
+    <Window.Resources>
+        <!-- Stil für die Radio Buttons -->
+        
+    </Window.Resources>
+    
+    <Grid Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <!--Top Menu-->
+        <Grid Grid.Row="0" Background="Gray">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            
+            <!--Buttons-->
+            <Button Grid.Column="0" Content="Datei" Click="Datei_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="3 1"></Button>
+            <Button Grid.Column="1" Content="Undo" Click="UndoButton_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="3 1"></Button>
+            <Button Grid.Column="2" x:Name="Redo" Click="Redo_Click"  Content="Redo" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="3 1"></Button>
+            <Button Grid.Column="3" x:Name="Text" Click="Text_Click"  Content="Textfeld" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="3 1"></Button>
+            <Button Grid.Column="4" Content="Image" Click="Image_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="3 1"></Button>
+            
+              
+        </Grid>
+        
+        <!--Mainfeld-->
+        <Grid Grid.Row="1" x:Name="workingSpace" Background="Transparent">
+            
+            <Grid.ColumnDefinitions>
+                <!--Toolbar Links-->
+                <ColumnDefinition Width="200" x:Name="LBar"/>
+                <!--Mainfeld work-->
+                <ColumnDefinition Width="*"/>
+                <!--Toolbar Rechts-->
+                <ColumnDefinition Width="200" x:Name="RBar"/>
+            </Grid.ColumnDefinitions>
+            
+            <!--Toolbar Rechts-->
+            <Border Grid.Column="2" BorderBrush="Black" BorderThickness="1" x:Name="rightMenu">
+                
+                <Grid Background="lightgray">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="500"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <!--Ebenenverschieber-->
+                    <Border Grid.Row="0" Margin="10" BorderBrush="Black" BorderThickness="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            
+                            <TextBlock Grid.Row="0" Text="Ebenen" HorizontalAlignment="Stretch" TextAlignment="Center"/>
+                            
+                            <!--Einfügen und Entfernen für Layer-->
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+
+                                <Button x:Name="AddLayer" Click="AddLayer_Click" Content="+" Grid.Column="0" ToolTip="Layer Hinzufügen"/>
+                                <Button x:Name="RemoveLayer" Content="-" Grid.Column="1" ToolTip="Layer Löschen" Click="RemoveLayer_Click"/>
+                            </Grid>
+                            
+                            <!--EbenenManager-->
+                            <Border Grid.Row="2" BorderBrush="Black" BorderThickness="1">
+                                <ListBox Grid.Row="1" Background="DarkGray" x:Name="LayerManager" >
+
+                                </ListBox>
+                            </Border>
+                            
+                        </Grid>
+                    </Border>
+                    
+                </Grid>
+                
+            </Border>
+
+            <!--Toolbar Links-->
+            <Border Grid.Column="0" BorderBrush="Black" BorderThickness="1" x:Name="leftMenu"  >
+            <Grid Grid.Column="0" Background="lightgray">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!--Modes-->
+                    <Border BorderBrush="Black" BorderThickness="2">
+                        <Grid Grid.Row="0">
+                            
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <!--Title-->
+                            <TextBlock Grid.Row="0"  Grid.Column="1" Text="Modes" Background="LightGray" Margin="3" TextAlignment="Center"/>
+
+                            <!--Labels-->
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Grid.Column="0" Text="Zeichnen" Background="LightGray" Margin="3" TextAlignment="Center"/>
+                                <TextBlock Grid.Column="1" Text="Bearbeiten" Background="LightGray" Margin="3" TextAlignment="Center"/>
+                                <TextBlock Grid.Column="2" Text="Schreiben" Background="LightGray" Margin="3" TextAlignment="Center"/>
+                            </Grid>
+
+                            <!--Buttons-->
+                            <Grid Grid.Row="2" x:Name="modes">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Button x:Name="draw" Click="draw_Click" ToolTip="Gehe in den Zeichenmodus" Grid.Column="0" Background="Gray" BorderBrush="Black" BorderThickness="1" Margin="2">
+                                    <Image Source="Assets/pen.png"/>
+                                </Button>
+                                <Button x:Name="custom" Click="custom_Click" ToolTip="Gehe in den Bearbeitungsmodus" Grid.Column="1" Background="Gray" BorderBrush="Black" BorderThickness="1" Margin="2">
+                                    <Image Source="Assets/custom.png"/>
+                                </Button>
+                                <Button x:Name="write" Click="write_Click" Grid.Column="2" ToolTip="Gehe in den Schreibmodus" Background="Gray" BorderBrush="Black" BorderThickness="1" Margin="2">
+                                    <Image Source="Assets/write.png"/>
+                                </Button>
+
+                            </Grid>
+                           
+                        </Grid>
+                    </Border>
+
+                    <!--Utensilien-->
+                    <Grid Grid.Row="1" x:Name="Tools">
+                        
+                        <!--Zeichnen-->
+                        <Grid Background="DarkGray" Margin="5" x:Name="DrawTools" Visibility="Hidden">
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Grid.Row="0" Text="Zeichenutensilien" Background="LightGray" Margin="3" TextAlignment="Center"/>
+                            
+                            <!--Zeichenwerkzeuge-->
+                            <Grid Grid.Row="1" Margin="3" Background="Gray" Height="40" x:Name="DrawToolBox">
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <!--Werkzeugknöpfe-->
+                                <Button Click="Pen_Click" Grid.Column="0" Grid.Row="0" x:Name="Pen" BorderBrush="Black" BorderThickness="1" ToolTip="Stift zum Zeichnen">
+                                    <Image Source="Assets/pencil.png"/>
+                                </Button>
+                                <Button Click="Eraser_Click" Grid.Column="1" Grid.Row="0" x:Name="Eraser" BorderBrush="Black" BorderThickness="1" ToolTip="Radierer um Farbe zu entfernen">
+                                    <Image Source="Assets/erase.png"/>
+                                </Button>
+                                <Button Click="FloodFill_Click" Grid.Column="2" Grid.Row="0" x:Name="FloodFill" BorderBrush="Black" BorderThickness="1" ToolTip="Fülltool zum füllen von Flächen">
+                                    <Image Source="Assets/fill.png"/>
+                                </Button>
+                                <Button Click="PickColor_Click" Grid.Column="3" Grid.Row="0" x:Name="PickColor" BorderBrush="Black" BorderThickness="1" ToolTip="Farbpipette zur Farbauswahl aus dem Bild">
+                                    <Image Source="Assets/colorpick.png"/>
+                                </Button>
+
+                            </Grid>
+
+                            <!--Linienstärke-->
+                            <TextBlock Grid.Row="2"  Text="Liniendicke"  Margin="3" TextAlignment="Center"/>
+                            <Slider Grid.Row="3" x:Name="lineThicknessSlider" Minimum="2" Maximum="20" Value="1" TickFrequency="1" TickPlacement="BottomRight"  Margin="10"/>
+
+                            <!--Farbauswahl-->
+                            <TextBlock Grid.Row="4" Text="Farbauswahl" Background="LightGray" Margin="3" TextAlignment="Center"/>
+                            
+                            <Grid x:Name="colorGrid" Grid.Row="5" Height="75">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+
+                                <!-- Buttons für die Brush-Auswahl -->
+                                <Button Grid.Row="0" Grid.Column="0" Background="Black" Click="BrushButton_Click" x:Name="BT1" BorderBrush="Black" BorderThickness="2"/>
+                                <Button Grid.Row="0" Grid.Column="1" Background="Red" Click="BrushButton_Click" x:Name="BT2" BorderBrush="Black" BorderThickness="1"/>
+                                <Button Grid.Row="0" Grid.Column="2" Background="Green" Click="BrushButton_Click" x:Name="BT3" BorderBrush="Black" BorderThickness="1"/>
+                                <Button Grid.Row="0" Grid.Column="3" Background="Blue" Click="BrushButton_Click" x:Name="BT4" BorderBrush="Black" BorderThickness="1"/>
+                                <Button Grid.Row="0" Grid.Column="4" Background="Yellow" Click="BrushButton_Click" x:Name="BT5" BorderBrush="Black" BorderThickness="1"/>
+
+                                <Button Grid.Row="1" Grid.Column="0" Background="White" Click="BrushButton_Click" x:Name="BT6" BorderBrush="Black" BorderThickness="1"/>
+                                <Button Grid.Row="1" Grid.Column="1" Background="Orange" Click="BrushButton_Click" x:Name="BT7" BorderBrush="Black" BorderThickness="1"/>
+                                <Button Grid.Row="1" Grid.Column="2" Background="Pink" Click="BrushButton_Click" x:Name="BT8" BorderBrush="Black" BorderThickness="1"/>
+                                <Button Grid.Row="1" Grid.Column="3" Background="LightBlue" Click="BrushButton_Click" x:Name="BT9" BorderBrush="Black" BorderThickness="1"/>
+                                <Button Grid.Row="1" Grid.Column="4" Background="LightGreen" Click="BrushButton_Click" x:Name="BT10" BorderBrush="Black" BorderThickness="1"/>
+
+                            </Grid>
+                            <Button x:Name="ChangeColor" Grid.Row="6" Content="Farbe ändern" Margin="2 1" Click="ChangeColor_Click"/>
+
+                        </Grid>
+                        
+                        <!--EditTools-->
+                        <Grid Background="DarkGray" Margin="5" x:Name="EditTools" Visibility="Hidden">
+                            
+                        </Grid>
+                        
+                        <!--WriteTools-->
+                        <Grid Background="DarkGray" Margin="5" x:Name="WriteTools" Visibility="Hidden">
+                            
+                        </Grid>
+
+                    </Grid>
+                    
+                </Grid>
+            </Border>
+            
+            <!--Zeichnung-->
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <!--Panel um zwischen Projekten hin und her zu wechseln-->
+                    <Grid Grid.Row="0" Background="DarkGray">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+
+                    <Button Grid.Column="0" x:Name="LMenu" Click="LMenu_Click" HorizontalAlignment="Left" Margin="0">
+                        <Image Source="/Assets/write.png"/>
+                    </Button>
+                        
+                    <ScrollViewer Grid.Column="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden">
+                        <StackPanel Orientation="Horizontal" Background="DarkGray" x:Name="projectPanel"/>
+                    </ScrollViewer>
+                    
+                    <Button Grid.Column="2" x:Name="RMenu" Click="RMenu_Click" HorizontalAlignment="Right" Margin="0">
+                        <Image Source="/Assets/write.png"/>
+                    </Button>
+                        
+                    </Grid>
+                    
+
+                    <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                    <Grid Background="DarkGray" x:Name="work" MouseWheel="Canvas_MouseWheel" MouseLeftButtonDown="Canvas_MouseDown" MouseMove="Canvas_MouseMove" MouseLeftButtonUp="Canvas_MouseUp">
+
+                            <!--Copyright-->
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock Text="DevPad" FontSize="100" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray"/>
+                                <TextBlock Text="© RayCraft Studios 2024" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray"/>
+                            </StackPanel>
+
+                            <!--canvas zum zeichnen-->
+
+                        <Canvas x:Name="canvas" Background="Gray" Width="0" Height="0" 
+                                Grid.ColumnSpan="2" 
+                                AllowDrop="True">
+                        </Canvas>
+
+                        </Grid>
+                     </ScrollViewer>
+            </Grid>
+
+            
+
+        </Grid>
+            
+
+    </Grid>
+</Window>
