@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\IRay\\source\\repos\\DevPad\\DevPad\\DevPad.csproj": {}
+    "C:\\Users\\Olive\\source\\repos\\DevPad\\DevPad\\DevPad.csproj": {}
   },
   "projects": {
-    "C:\\Users\\IRay\\source\\repos\\DevPad\\DevPad\\DevPad.csproj": {
+    "C:\\Users\\Olive\\source\\repos\\DevPad\\DevPad\\DevPad.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\IRay\\source\\repos\\DevPad\\DevPad\\DevPad.csproj",
+        "projectUniqueName": "C:\\Users\\Olive\\source\\repos\\DevPad\\DevPad\\DevPad.csproj",
         "projectName": "DevPad",
-        "projectPath": "C:\\Users\\IRay\\source\\repos\\DevPad\\DevPad\\DevPad.csproj",
-        "packagesPath": "C:\\Users\\IRay\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\IRay\\source\\repos\\DevPad\\DevPad\\obj\\",
+        "projectPath": "C:\\Users\\Olive\\source\\repos\\DevPad\\DevPad\\DevPad.csproj",
+        "packagesPath": "C:\\Users\\Olive\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Olive\\source\\repos\\DevPad\\DevPad\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\IRay\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Olive\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -64,24 +68,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[7.0.15, 7.0.15]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[7.0.15, 7.0.15]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[7.0.15, 7.0.15]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[7.0.15, 7.0.15]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -90,7 +76,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     }
